@@ -1,0 +1,405 @@
+<mxfile host="app.diagrams.net" modified="2026-03-03T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram id="working-model" name="5-Step Agentic Workflow">
+    <mxGraphModel dx="1600" dy="1100" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1300" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- ==================== TITLE ==================== -->
+        <mxCell id="title" value="The AI Collaboration Framework (Multi-Agent Setup)" style="text;html=1;fontSize=24;fontStyle=1;align=center;verticalAlign=middle;whiteSpace=wrap;fillColor=none;strokeColor=none;fontColor=#1a1a2e;" vertex="1" parent="1">
+          <mxGeometry x="300" y="20" width="1200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="Claude (Backend/Architect) + Gemini (Frontend/UX) — Coordinated via Shared Files" style="text;html=1;fontSize=13;fontStyle=2;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;fontColor=#666;" vertex="1" parent="1">
+          <mxGeometry x="400" y="58" width="1000" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== 3 ACTORS ==================== -->
+        <mxCell id="actor-human" value="Product Owner&#xa;(You)" style="shape=mxgraph.basic.person;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="855" y="95" width="90" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="actor-claude" value="Claude&#xa;Brain &amp; Backend" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f3e8ff;strokeColor=#7c3aed;fontSize=12;fontStyle=1;fontColor=#5b21b6;" vertex="1" parent="1">
+          <mxGeometry x="360" y="100" width="140" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="actor-gemini" value="Gemini&#xa;Face &amp; Frontend" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#2563eb;fontSize=12;fontStyle=1;fontColor=#1e40af;" vertex="1" parent="1">
+          <mxGeometry x="1300" y="100" width="140" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- =============================================== -->
+        <!-- ============= STEP 1: BACKLOG ================ -->
+        <!-- =============================================== -->
+        <mxCell id="s1-badge" value="STEP 1" style="rounded=1;fillColor=#fef3c7;strokeColor=#d97706;fontSize=12;fontStyle=1;fontColor=#92400e;" vertex="1" parent="1">
+          <mxGeometry x="60" y="200" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="s1-title" value="Feature Ideation &amp; Backlog" style="text;html=1;fontSize=15;fontStyle=1;align=left;fillColor=none;strokeColor=none;fontColor=#92400e;" vertex="1" parent="1">
+          <mxGeometry x="150" y="200" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="s1-who" value="Product Owner" style="text;html=1;fontSize=10;fontStyle=2;fillColor=none;strokeColor=none;fontColor=#888;" vertex="1" parent="1">
+          <mxGeometry x="150" y="226" width="120" height="18" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s1-box" value="" style="rounded=1;fillColor=#fffbeb;strokeColor=#d97706;dashed=1;dashPattern=8 4;" vertex="1" parent="1">
+          <mxGeometry x="60" y="250" width="390" height="120" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s1-idea" value="New feature idea" style="rounded=1;fillColor=#fef9c3;strokeColor=#ca8a04;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="80" y="270" width="130" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="s1-backlog" value="docs/backlog.md&#xa;&#xa;To Do → Doing → Done" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=0.12;fillColor=#fff;strokeColor=#d97706;fontSize=10;align=center;" vertex="1" parent="1">
+          <mxGeometry x="270" y="262" width="160" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="s1-a1" value="add to&#xa;backlog" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#d97706;strokeWidth=1.5;fontSize=9;fontColor=#92400e;fontStyle=2;" edge="1" parent="1" source="s1-idea" target="s1-backlog">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s1-note" value="When ready to build → move from To Do to Doing" style="text;html=1;fontSize=9;fontStyle=2;fillColor=none;strokeColor=none;fontColor=#92400e;" vertex="1" parent="1">
+          <mxGeometry x="80" y="340" width="350" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- =============================================== -->
+        <!-- ============= STEP 2: CREATE SPEC ============ -->
+        <!-- =============================================== -->
+        <mxCell id="s2-badge" value="STEP 2" style="rounded=1;fillColor=#ffedd5;strokeColor=#ea580c;fontSize=12;fontStyle=1;fontColor=#9a3412;" vertex="1" parent="1">
+          <mxGeometry x="510" y="200" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="s2-title" value="Create Requirements (Single Source of Truth)" style="text;html=1;fontSize=15;fontStyle=1;align=left;fillColor=none;strokeColor=none;fontColor=#9a3412;" vertex="1" parent="1">
+          <mxGeometry x="600" y="200" width="420" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="s2-who" value="Product Owner" style="text;html=1;fontSize=10;fontStyle=2;fillColor=none;strokeColor=none;fontColor=#888;" vertex="1" parent="1">
+          <mxGeometry x="600" y="226" width="120" height="18" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s2-file" value="improvement-X-[name].md&#xa;&#xa;Feature description&#xa;in natural language" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=0.12;fillColor=#fff7ed;strokeColor=#ea580c;fontSize=11;align=center;fontColor=#333;" vertex="1" parent="1">
+          <mxGeometry x="615" y="260" width="220" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="s2-label" value="Single Source&#xa;of Truth" style="text;html=1;fontSize=11;fontStyle=5;fillColor=#fef2f2;strokeColor=#ea580c;fontColor=#dc2626;rounded=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="855" y="280" width="100" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Arrow Step 1 → Step 2 -->
+        <mxCell id="a-s1-s2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=2;" edge="1" parent="1" source="s1-backlog" target="s2-file">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="480" y="295" />
+              <mxPoint x="480" y="310" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- =============================================== -->
+        <!-- ============= STEP 3: CLAUDE ================= -->
+        <!-- =============================================== -->
+        <mxCell id="s3-badge" value="STEP 3" style="rounded=1;fillColor=#f3e8ff;strokeColor=#7c3aed;fontSize=12;fontStyle=1;fontColor=#5b21b6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="420" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="s3-title" value="Claude = Brain &amp; Backend" style="text;html=1;fontSize=15;fontStyle=1;align=left;fillColor=none;strokeColor=none;fontColor=#7c3aed;" vertex="1" parent="1">
+          <mxGeometry x="150" y="420" width="300" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="s3-cmd" value="@[improvement-X.md] Design + Code Backend,&#xa;write API_SPEC.md, append Frontend Requirements" style="text;html=1;fontSize=9;fontStyle=2;fillColor=none;strokeColor=none;fontColor=#7c3aed;" vertex="1" parent="1">
+          <mxGeometry x="150" y="448" width="360" height="25" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s3-box" value="" style="rounded=1;fillColor=#faf5ff;strokeColor=#7c3aed;dashed=1;dashPattern=8 4;" vertex="1" parent="1">
+          <mxGeometry x="60" y="480" width="440" height="320" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s3-read" value="Read improvement-X.md&#xa;+ understand requirements" style="rounded=1;fillColor=#f3e8ff;strokeColor=#7c3aed;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="100" y="500" width="360" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s3-o1" value="Code backend implementation&#xa;(server, database, business logic)" style="rounded=1;fillColor=#fff;strokeColor=#7c3aed;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="100" y="560" width="260" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="s3-o1-num" value="1" style="ellipse;fillColor=#7c3aed;strokeColor=none;fontColor=#fff;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="560" width="22" height="22" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s3-o2" value="Update docs/architecture.md&#xa;(Design documentation)" style="rounded=1;fillColor=#fff;strokeColor=#7c3aed;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="100" y="618" width="260" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="s3-o2-num" value="2" style="ellipse;fillColor=#7c3aed;strokeColor=none;fontColor=#fff;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="618" width="22" height="22" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s3-o3" value="Write API_SPEC.md&#xa;(API contract for Frontend)" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=0.1;fillColor=#f3e8ff;strokeColor=#7c3aed;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="100" y="678" width="260" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="s3-o3-num" value="3" style="ellipse;fillColor=#7c3aed;strokeColor=none;fontColor=#fff;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="678" width="22" height="22" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s3-o4" value="Append &quot;Frontend Requirements&quot;&#xa;to improvement-X.md" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=0.1;fillColor=#fff7ed;strokeColor=#ea580c;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="740" width="260" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="s3-o4-num" value="4" style="ellipse;fillColor=#7c3aed;strokeColor=none;fontColor=#fff;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="740" width="22" height="22" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s3a1" style="rounded=1;strokeColor=#c4b5fd;" edge="1" parent="1" source="s3-read" target="s3-o1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="s3a2" style="rounded=1;strokeColor=#c4b5fd;" edge="1" parent="1" source="s3-o1" target="s3-o2"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="s3a3" style="rounded=1;strokeColor=#c4b5fd;" edge="1" parent="1" source="s3-o2" target="s3-o3"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="s3a4" style="rounded=1;strokeColor=#c4b5fd;" edge="1" parent="1" source="s3-o3" target="s3-o4"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="a-s2-s3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#7c3aed;strokeWidth=2;" edge="1" parent="1" source="s2-file" target="s3-read">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="725" y="400" />
+              <mxPoint x="280" y="400" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a-s2-s3-label" value="@[improvement-X.md]&#xa;Design + Code Backend" style="edgeLabel;html=1;fontSize=9;fontColor=#7c3aed;fontStyle=2;align=center;" vertex="1" connectable="0" parent="a-s2-s3">
+          <mxGeometry x="-0.2" y="-15" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- =============================================== -->
+        <!-- ============= STEP 4: GEMINI ================= -->
+        <!-- =============================================== -->
+        <mxCell id="s4-badge" value="STEP 4" style="rounded=1;fillColor=#dbeafe;strokeColor=#2563eb;fontSize=12;fontStyle=1;fontColor=#1e40af;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="420" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="s4-title" value="Gemini = Face &amp; Frontend" style="text;html=1;fontSize=15;fontStyle=1;align=left;fillColor=none;strokeColor=none;fontColor=#2563eb;" vertex="1" parent="1">
+          <mxGeometry x="1150" y="420" width="300" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="s4-cmd" value="@[improvement-X.md] Claude done Backend.&#xa;Read + code Frontend UI from API_SPEC.md" style="text;html=1;fontSize=9;fontStyle=2;fillColor=none;strokeColor=none;fontColor=#2563eb;" vertex="1" parent="1">
+          <mxGeometry x="1150" y="448" width="350" height="25" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s4-box" value="" style="rounded=1;fillColor=#eff6ff;strokeColor=#2563eb;dashed=1;dashPattern=8 4;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="480" width="440" height="320" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s4-read" value="Read improvement-X.md&#xa;(Frontend Requirements section)&#xa;+ API_SPEC.md" style="rounded=1;fillColor=#dbeafe;strokeColor=#2563eb;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="500" width="360" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s4-o1" value="Code frontend UI&#xa;(based on Claude's spec)" style="rounded=1;fillColor=#fff;strokeColor=#2563eb;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="575" width="280" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="s4-o1-num" value="1" style="ellipse;fillColor=#2563eb;strokeColor=none;fontColor=#fff;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="575" width="22" height="22" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s4-o2" value="Connect API endpoints&#xa;(Following API_SPEC.md payload format)" style="rounded=1;fillColor=#fff;strokeColor=#2563eb;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="635" width="280" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="s4-o2-num" value="2" style="ellipse;fillColor=#2563eb;strokeColor=none;fontColor=#fff;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="635" width="22" height="22" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s4-o3" value="If API bug found (HTTP 415, 500...)&#xa;Write red flag back to improvement-X.md&#xa;&#xa;Domain Separation: Gemini NEVER fixes Backend" style="rounded=1;fillColor=#fef2f2;strokeColor=#dc2626;fontSize=10;fontStyle=0;fontColor=#991b1b;align=center;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="698" width="360" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="s4-o3-num" value="!" style="ellipse;fillColor=#dc2626;strokeColor=none;fontColor=#fff;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="698" width="22" height="22" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s4a1" style="rounded=1;strokeColor=#93c5fd;" edge="1" parent="1" source="s4-read" target="s4-o1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="s4a2" style="rounded=1;strokeColor=#93c5fd;" edge="1" parent="1" source="s4-o1" target="s4-o2"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="s4a3" style="rounded=1;strokeColor=#93c5fd;" edge="1" parent="1" source="s4-o2" target="s4-o3"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="a-s3-s4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#2563eb;strokeWidth=2.5;" edge="1" parent="1" source="s3-o4" target="s4-read">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="780" y="763" />
+              <mxPoint x="780" y="525" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a-s3-s4-label" value="Human hands file to Gemini&#xa;@[improvement-X.md]" style="edgeLabel;html=1;fontSize=9;fontColor=#333;fontStyle=2;align=center;" vertex="1" connectable="0" parent="a-s3-s4">
+          <mxGeometry x="-0.15" y="-20" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="a-s3-s4-human" value="Human&#xa;Bridge" style="text;html=1;fontSize=10;fontStyle=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#92400e;rounded=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="745" y="630" width="70" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- =============================================== -->
+        <!-- ========= FEEDBACK LOOP (red dashed) ========= -->
+        <!-- =============================================== -->
+        <mxCell id="fb-label" value="FEEDBACK LOOP" style="rounded=1;fillColor=#fef2f2;strokeColor=#dc2626;fontSize=12;fontStyle=1;fontColor=#991b1b;" vertex="1" parent="1">
+          <mxGeometry x="680" y="850" width="150" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="a-feedback" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#dc2626;strokeWidth=2;dashed=1;dashPattern=10 5;" edge="1" parent="1" source="s4-o3" target="s3-read">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1280" y="830" />
+              <mxPoint x="280" y="830" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a-feedback-label" value="Gemini flags bug in improvement-X.md → Human sends back to Claude to fix" style="edgeLabel;html=1;fontSize=10;fontColor=#dc2626;fontStyle=2;align=center;" vertex="1" connectable="0" parent="a-feedback">
+          <mxGeometry x="0.05" y="-15" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- =============================================== -->
+        <!-- ============= STEP 5: COMPLETION ============= -->
+        <!-- =============================================== -->
+        <mxCell id="s5-badge" value="STEP 5" style="rounded=1;fillColor=#d1fae5;strokeColor=#16a34a;fontSize=12;fontStyle=1;fontColor=#166534;" vertex="1" parent="1">
+          <mxGeometry x="560" y="900" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="s5-title" value="Completion &amp; Logging" style="text;html=1;fontSize=15;fontStyle=1;align=left;fillColor=none;strokeColor=none;fontColor=#166534;" vertex="1" parent="1">
+          <mxGeometry x="650" y="900" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="s5-who" value="Product Owner" style="text;html=1;fontSize=10;fontStyle=2;fillColor=none;strokeColor=none;fontColor=#888;" vertex="1" parent="1">
+          <mxGeometry x="650" y="926" width="120" height="18" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s5-box" value="" style="rounded=1;fillColor=#f0fdf4;strokeColor=#16a34a;dashed=1;dashPattern=8 4;" vertex="1" parent="1">
+          <mxGeometry x="560" y="950" width="680" height="95" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s5-test" value="Test on&#xa;localhost" style="rounded=1;fillColor=#d1fae5;strokeColor=#16a34a;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="580" y="970" width="100" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="s5-backlog" value="Move to Done&#xa;in backlog.md" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=0.12;fillColor=#d1fae5;strokeColor=#16a34a;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="730" y="968" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="s5-lessons" value="Save lessons&#xa;(avoid repeating mistakes)" style="rounded=1;fillColor=#d1fae5;strokeColor=#16a34a;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="920" y="970" width="180" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="s5a1" style="rounded=1;strokeColor=#16a34a;" edge="1" parent="1" source="s5-test" target="s5-backlog"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="s5a2" style="rounded=1;strokeColor=#16a34a;" edge="1" parent="1" source="s5-backlog" target="s5-lessons"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="done-circle" value="DONE" style="ellipse;fillColor=#16a34a;strokeColor=#15803d;fontColor=#fff;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1290" y="970" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="s5a3" style="rounded=1;strokeColor=#16a34a;strokeWidth=2;" edge="1" parent="1" source="s5-lessons" target="done-circle"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="a-s4-s5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#16a34a;strokeWidth=2;" edge="1" parent="1" source="s4-box" target="s5-test">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1280" y="870" />
+              <mxPoint x="630" y="870" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a-s4-s5-label" value="UI + API both working" style="edgeLabel;html=1;fontSize=9;fontColor=#16a34a;fontStyle=2;" vertex="1" connectable="0" parent="a-s4-s5">
+          <mxGeometry x="0.2" y="-12" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- =============================================== -->
+        <!-- =========== SHARED FILES CENTER ============== -->
+        <!-- =============================================== -->
+        <mxCell id="files-box" value="" style="rounded=1;fillColor=#fefce8;strokeColor=#ca8a04;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="480" width="380" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="files-title" value="Shared Files (Contract)" style="text;html=1;fontSize=14;fontStyle=1;align=center;fillColor=none;strokeColor=none;fontColor=#92400e;" vertex="1" parent="1">
+          <mxGeometry x="640" y="488" width="230" height="25" as="geometry" />
+        </mxCell>
+
+        <mxCell id="f-improvement" value="improvement-X.md&#xa;&#xa;Feature spec (PO)&#xa;+ Frontend Requirements (Claude)&#xa;+ Bug flags (Gemini)" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=0.1;fillColor=#fff7ed;strokeColor=#ea580c;fontSize=10;align=center;" vertex="1" parent="1">
+          <mxGeometry x="585" y="525" width="200" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="f-apispec" value="API_SPEC.md&#xa;&#xa;Endpoint docs&#xa;Request / Response&#xa;schemas" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=0.1;fillColor=#f3e8ff;strokeColor=#7c3aed;fontSize=10;align=center;" vertex="1" parent="1">
+          <mxGeometry x="585" y="645" width="200" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="f-architecture" value="docs/architecture.md&#xa;&#xa;System design docs" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=0.1;fillColor=#f3e8ff;strokeColor=#7c3aed;fontSize=10;align=center;" vertex="1" parent="1">
+          <mxGeometry x="585" y="755" width="200" height="45" as="geometry" />
+        </mxCell>
+
+        <mxCell id="f-label-claude" value="Claude writes" style="text;html=1;fontSize=9;fontStyle=2;fillColor=none;strokeColor=none;fontColor=#7c3aed;" vertex="1" parent="1">
+          <mxGeometry x="810" y="650" width="80" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="f-label-gemini" value="Gemini reads" style="text;html=1;fontSize=9;fontStyle=2;fillColor=none;strokeColor=none;fontColor=#2563eb;" vertex="1" parent="1">
+          <mxGeometry x="810" y="668" width="80" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="f-label-both" value="Both read/write" style="text;html=1;fontSize=9;fontStyle=2;fillColor=none;strokeColor=none;fontColor=#ea580c;" vertex="1" parent="1">
+          <mxGeometry x="810" y="550" width="100" height="15" as="geometry" />
+        </mxCell>
+
+        <!-- =============================================== -->
+        <!-- ============= DOMAIN SEPARATION ============== -->
+        <!-- =============================================== -->
+        <mxCell id="domain-box" value="" style="rounded=1;fillColor=#fafafa;strokeColor=#999;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1080" width="720" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="domain-title" value="Domain Separation (Strict Boundary)" style="text;html=1;fontSize=13;fontStyle=1;align=left;fillColor=none;strokeColor=none;fontColor=#333;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1088" width="350" height="22" as="geometry" />
+        </mxCell>
+
+        <mxCell id="domain-claude" value="Claude&#xa;&#xa;Backend server code&#xa;API design&#xa;Database schema&#xa;Architecture docs" style="rounded=1;fillColor=#f3e8ff;strokeColor=#7c3aed;fontSize=10;align=center;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="90" y="1118" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="domain-sep" value="NEVER&#xa;cross" style="text;html=1;fontSize=14;fontStyle=1;fillColor=none;strokeColor=none;fontColor=#dc2626;align=center;" vertex="1" parent="1">
+          <mxGeometry x="320" y="1130" width="80" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="domain-gemini" value="Gemini&#xa;&#xa;Frontend UI code&#xa;UI/UX components&#xa;API integration&#xa;(read-only on Backend files)" style="rounded=1;fillColor=#dbeafe;strokeColor=#2563eb;fontSize=10;align=center;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="430" y="1118" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="domain-x" value="X" style="text;html=1;fontSize=28;fontStyle=1;fillColor=none;strokeColor=none;fontColor=#dc2626;align=center;" vertex="1" parent="1">
+          <mxGeometry x="345" y="1120" width="30" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- =============================================== -->
+        <!-- ================ LEGEND ====================== -->
+        <!-- =============================================== -->
+        <mxCell id="legend-box" value="" style="rounded=1;fillColor=#fafafa;strokeColor=#ccc;" vertex="1" parent="1">
+          <mxGeometry x="840" y="1080" width="420" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-title" value="Legend" style="text;html=1;fontSize=12;fontStyle=1;align=left;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="855" y="1085" width="60" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="l1" value="" style="rounded=1;fillColor=#fef3c7;strokeColor=#d97706;" vertex="1" parent="1">
+          <mxGeometry x="855" y="1115" width="18" height="12" as="geometry" />
+        </mxCell>
+        <mxCell id="l1t" value="Step 1 — Backlog" style="text;fontSize=10;fillColor=none;strokeColor=none;align=left;" vertex="1" parent="1">
+          <mxGeometry x="878" y="1112" width="110" height="18" as="geometry" />
+        </mxCell>
+
+        <mxCell id="l2" value="" style="shape=document;fillColor=#fff7ed;strokeColor=#ea580c;size=0.15;" vertex="1" parent="1">
+          <mxGeometry x="855" y="1135" width="18" height="14" as="geometry" />
+        </mxCell>
+        <mxCell id="l2t" value="Step 2 — Requirement file" style="text;fontSize=10;fillColor=none;strokeColor=none;align=left;" vertex="1" parent="1">
+          <mxGeometry x="878" y="1133" width="150" height="18" as="geometry" />
+        </mxCell>
+
+        <mxCell id="l3" value="" style="rounded=1;fillColor=#f3e8ff;strokeColor=#7c3aed;" vertex="1" parent="1">
+          <mxGeometry x="855" y="1155" width="18" height="12" as="geometry" />
+        </mxCell>
+        <mxCell id="l3t" value="Step 3 — Claude (Backend)" style="text;fontSize=10;fillColor=none;strokeColor=none;align=left;fontColor=#7c3aed;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="878" y="1152" width="160" height="18" as="geometry" />
+        </mxCell>
+
+        <mxCell id="l4" value="" style="rounded=1;fillColor=#dbeafe;strokeColor=#2563eb;" vertex="1" parent="1">
+          <mxGeometry x="855" y="1175" width="18" height="12" as="geometry" />
+        </mxCell>
+        <mxCell id="l4t" value="Step 4 — Gemini (Frontend)" style="text;fontSize=10;fillColor=none;strokeColor=none;align=left;fontColor=#2563eb;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="878" y="1172" width="160" height="18" as="geometry" />
+        </mxCell>
+
+        <mxCell id="l5" value="" style="rounded=1;fillColor=#d1fae5;strokeColor=#16a34a;" vertex="1" parent="1">
+          <mxGeometry x="1075" y="1115" width="18" height="12" as="geometry" />
+        </mxCell>
+        <mxCell id="l5t" value="Step 5 — Completion" style="text;fontSize=10;fillColor=none;strokeColor=none;align=left;fontColor=#16a34a;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1098" y="1112" width="140" height="18" as="geometry" />
+        </mxCell>
+
+        <mxCell id="l6" value="" style="rounded=0;fillColor=none;strokeColor=#dc2626;dashed=1;dashPattern=8 4;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1075" y="1138" width="18" height="3" as="geometry" />
+        </mxCell>
+        <mxCell id="l6t" value="Feedback loop (bug flag)" style="text;fontSize=10;fillColor=none;strokeColor=none;align=left;fontColor=#dc2626;" vertex="1" parent="1">
+          <mxGeometry x="1098" y="1133" width="150" height="18" as="geometry" />
+        </mxCell>
+
+        <mxCell id="l7" value="" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="1075" y="1158" width="18" height="12" as="geometry" />
+        </mxCell>
+        <mxCell id="l7t" value="Human (bridge between AIs)" style="text;fontSize=10;fillColor=none;strokeColor=none;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1098" y="1155" width="170" height="18" as="geometry" />
+        </mxCell>
+
+        <mxCell id="l8" value="" style="rounded=0;fillColor=none;strokeColor=#333;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1075" y="1178" width="18" height="3" as="geometry" />
+        </mxCell>
+        <mxCell id="l8t" value="Sequential handoff" style="text;fontSize=10;fillColor=none;strokeColor=none;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1098" y="1175" width="140" height="18" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
