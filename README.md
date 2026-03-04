@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI Agentic Framework
 
-## Getting Started
+A boilerplate for dual-AI collaboration: **Claude** (Backend/Architect) + **Gemini** (Frontend/UX), coordinated via shared Markdown files.
 
-First, run the development server:
+Clone this repo into any new project to instantly bootstrap a structured multi-agent development workflow.
+
+## What's Inside
+
+| File | Purpose |
+|---|---|
+| `CLAUDE.md` | Backend agent rules & boundaries |
+| `GEMINI.md` | Frontend agent rules & boundaries |
+| `API_SPEC.md` | API contract between Backend and Frontend |
+| `docs/working-model.md` | The 5-step agentic workflow |
+| `docs/working-model.drawio` | Visual diagram (open in draw.io) |
+| `docs/architecture.md` | System design (AI fills this in) |
+| `docs/backlog.md` | Kanban board for features |
+| `tasks/lessons.md` | AI self-improvement log |
+| `improvements/_template.md` | Template for feature specs |
+
+## 4-Step Setup
+
+### Step 1: Clone & Initialize
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/sondao86/ai-agentic-framework.git my-project
+cd my-project
+# Create your project directories (e.g., backend/, frontend/)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Step 2: Start Claude (Backend Agent)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Open a terminal in the project root and launch Claude Code:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+claude --dangerously-skip-permissions
+```
 
-## Learn More
+Claude automatically reads `CLAUDE.md` and becomes the Backend Architect. It works from `docs/backlog.md` and writes API contracts to `API_SPEC.md`.
 
-To learn more about Next.js, take a look at the following resources:
+### Step 3: Assign the First Task
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Add your first feature to `docs/backlog.md` (move it to **Doing**)
+2. Create `improvements/improvement-1-[name].md` from the template
+3. Tell Claude:
+   ```
+   @[improvements/improvement-1-[name].md] Design the solution: setup database schema,
+   update docs/architecture.md, write API to API_SPEC.md, and append Frontend Requirements.
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Step 4: Activate Gemini (Frontend Agent)
 
-## Deploy on Vercel
+In your IDE (VS Code, Cursor, or Gemini app), tell the AI chat:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+Read GEMINI.md to understand your role. Then read improvements/improvement-1-[name].md
+and API_SPEC.md to code the UI.
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The dual-AI machine is now running. Claude builds the backend, Gemini builds the frontend, and `API_SPEC.md` is the contract between them.
+
+## How It Works
+
+See `docs/working-model.md` for the full 5-step workflow, or open `docs/working-model.drawio` in [draw.io](https://app.diagrams.net/) for the visual diagram.
+
+## License
+
+MIT
