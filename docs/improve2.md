@@ -1,0 +1,4 @@
+improve2.md
+
+1. dùng Claude sang code front end luôn, gemini chỉ review UI/UX, flow là từ api spec Claude recommend enhancement document, sau đó chờ gemini approve trước khi implement
+2. khi mình pull code xuống dự án khác lúc triển khai dự án claude tự động thêm repo này (ai-agentic-framework) như một phần của dự án và tự động khi các file improve/ arhicetect vào trong folder ai-agentic-framework. update claude để khi đọc folder này sẽ chỉ sử dụng như 1 reference framework, phần code repo cho dự án chính được khởi tạo độc lập (ví dụ mình code 1 ứng dụng auto test với ai-agentic -framework, thì sẽ tạo ra 1 repo riêng cho auto-test.
