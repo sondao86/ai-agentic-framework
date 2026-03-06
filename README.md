@@ -18,6 +18,26 @@ Use this repo as a reference alongside your project repos to bootstrap a structu
 | `tasks/lessons.md` | AI self-improvement log |
 | `improvements/_template.md` | Template for feature specs |
 
+## Project Structure Reference
+
+See [`docs/PROJECT_STRUCTURE.md`](docs/PROJECT_STRUCTURE.md) for the recommended folder layout when creating new projects.
+
+Quick overview:
+
+```
+/
+├── CLAUDE.md / GEMINI.md        # Agent rules (project root)
+├── docs/                        # Unified documentation
+│   ├── api/                     #   API contract
+│   ├── backend/                 #   Backend architecture & data model
+│   ├── frontend/                #   UI/UX specs
+│   ├── framework/               #   Multi-agent framework design
+│   └── testing/                 #   QA strategy
+├── tasks/                       # AI task tracking & lessons learned
+├── backend/                     # Python / FastAPI (or your stack)
+└── frontend/                    # Next.js (or your stack)
+```
+
 ## How to Use
 
 ### As a Reference Framework (Recommended)
@@ -33,7 +53,7 @@ cd my-app
 git clone https://github.com/sondao86/ai-agentic-framework.git
 ```
 
-Copy `CLAUDE.md` and `GEMINI.md` into your project, then adapt them to your stack. The framework repo stays as reference material — patterns, docs, and workflow guidance.
+Copy `CLAUDE.md` and `GEMINI.md` into your project, then adapt them to your stack. Use `docs/PROJECT_STRUCTURE.md` as a scaffold for your project's folder layout. The framework repo stays as reference material — patterns, docs, and workflow guidance.
 
 ### Feature Development Flow
 
