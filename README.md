@@ -1,16 +1,16 @@
 # AI Agentic Framework
 
-A boilerplate for dual-AI collaboration: **Claude** (Backend/Architect) + **Gemini** (Frontend/UX), coordinated via shared Markdown files.
+A **reference framework** for AI-assisted development: **Claude** (Full-Stack Implementation) + **Gemini** (UI/UX Review), coordinated via shared Markdown files.
 
-Clone this repo into any new project to instantly bootstrap a structured multi-agent development workflow.
+Use this repo as a reference alongside your project repos to bootstrap a structured multi-agent development workflow.
 
 ## What's Inside
 
 | File | Purpose |
 |---|---|
-| `CLAUDE.md` | Backend agent rules & boundaries |
-| `GEMINI.md` | Frontend agent rules & boundaries |
-| `API_SPEC.md` | API contract between Backend and Frontend |
+| `CLAUDE.md` | Full-stack agent rules, memory management, workflow orchestration |
+| `GEMINI.md` | UI/UX review agent rules & boundaries |
+| `API_SPEC.md` | API contract for features |
 | `docs/working-model.md` | The 5-step agentic workflow |
 | `docs/working-model.drawio` | Visual diagram (open in draw.io) |
 | `docs/architecture.md` | System design (AI fills this in) |
@@ -18,46 +18,41 @@ Clone this repo into any new project to instantly bootstrap a structured multi-a
 | `tasks/lessons.md` | AI self-improvement log |
 | `improvements/_template.md` | Template for feature specs |
 
-## 4-Step Setup
+## How to Use
 
-### Step 1: Clone & Initialize
+### As a Reference Framework (Recommended)
+
+Clone this repo alongside your project repo:
 
 ```bash
-git clone https://github.com/sondao86/ai-agentic-framework.git my-project
-cd my-project
-# Create your project directories (e.g., backend/, frontend/)
+# Your actual project
+git clone https://github.com/your-org/my-app.git
+cd my-app
+
+# Reference framework (read-only, informs decisions)
+git clone https://github.com/sondao86/ai-agentic-framework.git
 ```
 
-### Step 2: Start Claude (Backend Agent)
+Copy `CLAUDE.md` and `GEMINI.md` into your project, then adapt them to your stack. The framework repo stays as reference material — patterns, docs, and workflow guidance.
 
-Open a terminal in the project root and launch Claude Code:
+### Feature Development Flow
+
+1. **API Spec** — Claude defines the API contract in `API_SPEC.md`
+2. **Enhancement Doc** — Claude writes a UI/UX recommendation document
+3. **Gemini Approval** — Gemini reviews and approves the enhancement before frontend work begins
+4. **Implement** — Claude implements both backend and frontend
+
+### Start Claude (Full-Stack Agent)
 
 ```bash
 claude --dangerously-skip-permissions
 ```
 
-Claude automatically reads `CLAUDE.md` and becomes the Backend Architect. It works from `docs/backlog.md` and writes API contracts to `API_SPEC.md`.
+Claude reads `CLAUDE.md` and handles full-stack implementation: API routes, database, UI components, and pages.
 
-### Step 3: Assign the First Task
+### Gemini's Role (UI/UX Reviewer)
 
-1. Add your first feature to `docs/backlog.md` (move it to **Doing**)
-2. Create `improvements/improvement-1-[name].md` from the template
-3. Tell Claude:
-   ```
-   @[improvements/improvement-1-[name].md] Design the solution: setup database schema,
-   update docs/architecture.md, write API to API_SPEC.md, and append Frontend Requirements.
-   ```
-
-### Step 4: Activate Gemini (Frontend Agent)
-
-In your IDE (VS Code, Cursor, or Gemini app), tell the AI chat:
-
-```
-Read GEMINI.md to understand your role. Then read improvements/improvement-1-[name].md
-and API_SPEC.md to code the UI.
-```
-
-The dual-AI machine is now running. Claude builds the backend, Gemini builds the frontend, and `API_SPEC.md` is the contract between them.
+Gemini reviews UI/UX design, user flow, and visual consistency. Gemini does not write code — only provides approval or feedback on enhancement docs.
 
 ## How It Works
 
