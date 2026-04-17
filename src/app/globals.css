@@ -1,26 +1,140 @@
 @import "tailwindcss";
 
+/* ===== Vietnamese Contemplative Christianity — Global Styles ===== */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Typography */
+  --font-serif: var(--font-noto-serif), "Noto Serif", Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-inter), "Inter", system-ui, -apple-system, sans-serif;
+  --line-height-relaxed: 1.85;
+  --line-height-body: 1.75;
+  --letter-spacing-vi: 0.015em;
+
+  /* Base */
+  --background: #fdfaf6;
+  --foreground: #2d1f07;
 }
 
 @theme inline {
+  /* Sacred color palette - Refined for a more premium look */
+  --color-sacred-50: #fdfaf6;
+  --color-sacred-100: #f5eedf;
+  --color-sacred-200: #e8d8bd;
+  --color-sacred-300: #d4b98c;
+  --color-sacred-400: #bd975c;
+  --color-sacred-500: #a37c3e;
+  --color-sacred-600: #8b6531;
+  --color-sacred-700: #6f4c28;
+  --color-sacred-800: #5d4026;
+  --color-sacred-900: #4a3421;
+
+  /* Map to semantic tokens */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  /* Fonts */
+  --font-serif: var(--font-noto-serif), "Noto Serif", Georgia, serif;
+  --font-sans: var(--font-inter), "Inter", system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* ===== Base body ===== */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-sacred-50);
+  background-image: radial-gradient(circle at top right, rgba(232, 216, 189, 0.4) 0%, transparent 40%),
+                    radial-gradient(circle at bottom left, rgba(212, 185, 140, 0.15) 0%, transparent 40%);
+  background-attachment: fixed;
+  color: var(--color-sacred-900);
+  font-family: var(--font-sans);
+  line-height: var(--line-height-body);
+  letter-spacing: var(--letter-spacing-vi);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== Vietnamese-friendly typography ===== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  color: var(--color-sacred-700);
+  line-height: 1.3;
+  letter-spacing: 0.005em;
+}
+
+h1 { font-size: 2.25rem; font-weight: 700; }
+h2 { font-size: 1.75rem; font-weight: 600; }
+h3 { font-size: 1.375rem; font-weight: 600; }
+h4 { font-size: 1.125rem; font-weight: 600; }
+
+/* ===== Contemplative prose sections ===== */
+.prose-sacred {
+  font-family: var(--font-serif);
+  font-size: 1.0625rem;
+  line-height: var(--line-height-relaxed);
+  color: var(--color-sacred-900);
+  max-width: 65ch;
+}
+
+.prose-sacred p {
+  margin-bottom: 1.5em;
+}
+
+.prose-sacred blockquote {
+  border-left: 3px solid var(--color-sacred-300);
+  padding-left: 1.25em;
+  margin: 2em 0;
+  font-style: italic;
+  color: var(--color-sacred-700);
+}
+
+.prose-sacred a {
+  color: var(--color-sacred-500);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.2s ease;
+}
+
+.prose-sacred a:hover {
+  color: var(--color-sacred-700);
+}
+
+.prose-sacred ul,
+.prose-sacred ol {
+  padding-left: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+.prose-sacred li {
+  margin-bottom: 0.5em;
+}
+
+.prose-sacred hr {
+  border: none;
+  border-top: 1px solid var(--color-sacred-200);
+  margin: 2.5em 0;
+}
+
+.prose-sacred strong {
+  color: var(--color-sacred-700);
+  font-weight: 600;
+}
+
+.prose-sacred em {
+  color: var(--color-sacred-700);
+}
+
+/* ===== Selection styling ===== */
+::selection {
+  background-color: var(--color-sacred-200);
+  color: var(--color-sacred-900);
+}
+
+/* ===== Smooth scrolling ===== */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===== Focus styles ===== */
+:focus-visible {
+  outline: 2px solid var(--color-sacred-500);
+  outline-offset: 2px;
+  border-radius: 2px;
 }

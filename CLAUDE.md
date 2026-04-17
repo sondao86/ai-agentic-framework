@@ -1,3 +1,5 @@
+> **Project progress:** xem `docs/progress.md`
+
 ## Workflow Orchestration
 
 ### 1. Plan Mode Default
@@ -44,9 +46,39 @@
 6. **Capture Lessons**: Update 'tasks/lessons.md' after corrections
 
 ## Core Principles
-- **Simplicity First**: Make every change as simple as possible. Impact minimal code.
-- **No Laziness**: Find root causes. No temporary fixes. Senior developer standards.
-- **Minimal Impact**: Changes should only touch what's necessary. Avoid introducing bugs.
+
+### Think Before Coding
+- State assumptions explicitly. If uncertain, ask.
+- If multiple interpretations exist, present them — don't pick silently.
+- If a simpler approach exists, say so. Push back when warranted.
+- If something is unclear, stop. Name what's confusing. Ask.
+
+### Simplicity First
+- No features beyond what was asked. No abstractions for single-use code.
+- No "flexibility" or "configurability" that wasn't requested.
+- No error handling for impossible scenarios.
+- If you write 200 lines and it could be 50, rewrite it.
+- Ask: "Would a senior engineer say this is overcomplicated?" If yes, simplify.
+
+### Surgical Changes
+- Don't "improve" adjacent code, comments, or formatting.
+- Don't refactor things that aren't broken. Match existing style.
+- Remove imports/variables/functions that YOUR changes made unused.
+- Don't remove pre-existing dead code unless asked.
+- **Test: Every changed line should trace directly to the user's request.**
+
+### Goal-Driven Execution
+- Transform tasks into verifiable goals with success criteria.
+- "Add validation" → "Write tests for invalid inputs, then make them pass"
+- "Fix the bug" → "Write a test that reproduces it, then fix"
+- For multi-step tasks, state a brief plan with verify steps.
+
+### 7. Domain Separation (Monolithic Next.js)
+- This is a monolithic Next.js (App Router) project — frontend and backend coexist in `src/`.
+- **Backend scope**: `src/app/api/`, `src/lib/`, `src/models/`, `src/types/`
+- **Frontend scope**: `src/app/` (pages), `src/components/`
+- When building a feature: implement API routes first, then update `API_SPEC.md`, then build UI.
+- Gemini may handle frontend tasks; Claude focuses on backend + architecture.
 
 ### 8. Memory & Context Management
 
@@ -81,22 +113,6 @@ At session start:
 - **docs/architecture.md** — Stack decisions, system design, integration patterns
 - **tasks/lessons.md** — Mistakes made and how to avoid them (self-improvement)
 - **Session checkpoints** — Ephemeral context: current task progress, in-flight decisions, debugging state
-
-### 7. Full-Stack Development with Gemini Review
-
-#### Claude's Role — Full-Stack Implementation
-- Claude codes **both backend and frontend**
-- Own the entire implementation: API routes, database, UI components, pages
-
-#### Gemini's Role — UI/UX Review Only
-- Gemini reviews UI/UX design, user flow, and visual consistency
-- Gemini does NOT write code — only provides approval or feedback
-
-#### Feature Development Flow
-1. **API Spec**: Define the API contract in `API_SPEC.md`
-2. **Enhancement Doc**: Claude writes a recommendation document describing the proposed UI/UX approach
-3. **Gemini Approval**: Wait for Gemini to review and approve the enhancement doc before implementing frontend
-4. **Implement**: Once approved, Claude implements both backend and frontend
 
 ### 9. Framework-as-Reference Pattern
 
