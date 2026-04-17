@@ -1,5 +1,5 @@
 export type AuthorLens = "tolle" | "demello" | "rohr";
-export type Workstream = "A" | "B";
+export type Workstream = "A" | "B" | "C" | "D" | "E";
 export type EpisodeStatus = "draft" | "verified" | "published";
 
 export interface LensInterpretation {
@@ -44,9 +44,10 @@ export interface EpisodeData {
   // Book-format fields (optional, preferred over legacy when present)
   partNumber?: number;       // 1 = Workstream A, 2 = Workstream B
   partTitle?: string;        // "Phần I: Kinh Thánh và bản chất thế giới"
-  chapterOpening?: string;   // Mở đầu dẫn dắt (150-250 từ)
-  chapterBody?: string;      // Essay liền mạch tích hợp context + lens + application (1200-1800 từ)
-  chapterClosing?: string;   // Kết chương + bridge sang chương tiếp (100-200 từ)
+  chapterOpening?: string;   // Mở đầu dẫn dắt (250-350 từ)
+  chapterBody?: string;      // Essay liền mạch (2000-2800 từ)
+  chapterClosing?: string;   // Kết chương + bridge (200-280 từ)
+  theologicalNote?: string;  // Bối cảnh Kinh Thánh học ngắn gọn (150-200 từ)
   generatedBy: "chatgpt" | "manual";
   generationModel?: string;
   verification?: Verification;

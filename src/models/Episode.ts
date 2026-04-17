@@ -6,7 +6,7 @@ export interface IEpisode extends Omit<EpisodeData, "_id">, Document {}
 const EpisodeSchema = new Schema<IEpisode>(
   {
     slug: { type: String, required: true, unique: true, index: true },
-    workstream: { type: String, enum: ["A", "B"], required: true, index: true },
+    workstream: { type: String, enum: ["A", "B", "C", "D", "E"], required: true, index: true },
     episodeNumber: { type: Number, required: true },
     title: { type: String, required: true },
 
@@ -39,10 +39,11 @@ const EpisodeSchema = new Schema<IEpisode>(
     chapterOpening: { type: String },
     chapterBody: { type: String },
     chapterClosing: { type: String },
+    theologicalNote: { type: String },
 
     practiceScript: {
       text: { type: String, required: true },
-      durationMinutes: { type: Number, required: true, min: 3, max: 7 },
+      durationMinutes: { type: Number, required: true, min: 3, max: 12 },
       audioUrl: { type: String },
       audioGeneratedAt: { type: Date },
     },
