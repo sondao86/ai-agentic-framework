@@ -31,12 +31,20 @@ Project thuần backend (frontend đã xóa 2026-04-17).
 
 | Bước | Mô tả | Tình trạng |
 |------|-------|-----------|
-| 1 | Data layer: thêm theologicalNote, tạo BookMeta model | ⏳ Chưa bắt đầu |
-| 2 | `seed/expand-chapters.ts` — regenerate 18 chương cũ | ⏳ Chưa bắt đầu |
-| 3 | `seed/generate-new-chapters.ts` — 21 chương mới | ⏳ Chưa bắt đầu |
-| 4 | `seed/add-book-structure.ts` — khung sách (intro/preambles/kết luận) | ⏳ Chưa bắt đầu |
-| 5 | `seed/export-pdf.ts` — rewrite export không cần web server | ⏳ Chưa bắt đầu |
-| 6 | Chạy toàn bộ + verify output | ⏳ Chưa bắt đầu |
+| 1 | Data layer: thêm theologicalNote, tạo BookMeta model | ✅ Done (2026-04-17) |
+| 2 | `seed/expand-chapters.ts` — regenerate 18 chương cũ | ✅ Done (code written) |
+| 3 | `seed/generate-new-chapters.ts` — 21 chương mới | ✅ Done (code written) |
+| 4 | `seed/add-book-structure.ts` — khung sách (intro/preambles/kết luận) | ✅ Done (code written) |
+| 5 | `seed/export-pdf.ts` — rewrite export không cần web server | ✅ Done (code written) |
+| 6 | Chạy toàn bộ + verify output | ⏳ Chưa chạy |
+
+**Bước tiếp theo:** Chạy seed scripts để generate nội dung:
+```bash
+npx tsx seed/expand-chapters.ts          # ~$4-6, ~30 phút
+npx tsx seed/generate-new-chapters.ts   # ~$4-6, ~30 phút
+npx tsx seed/add-book-structure.ts       # ~$0.50, ~5 phút
+npx tsx seed/export-pdf.ts               # output: ./book.pdf
+```
 
 ---
 
@@ -75,6 +83,6 @@ E5 Nước hằng sống (Ga 4) · E6 Diễm Ca: tình yêu thần bí (Dc 2:10-
 | `src/lib/content-pipeline.ts` | Shared AI generation logic |
 | `src/models/Episode.ts` | Schema chương sách |
 | `seed/regenerate-as-book.ts` | Script generate gốc (reference) |
-| `seed/export-pdf.ts` | Export PDF (cần rewrite) |
+| `seed/export-pdf.ts` | Export PDF (inline HTML, no web server) |
 | `docs/architecture.md` | Stack, schema, pipeline |
 | `tasks/todo.md` | Task checklist chi tiết |
