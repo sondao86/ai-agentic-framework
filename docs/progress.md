@@ -17,7 +17,7 @@ Project thuần backend (frontend đã xóa 2026-04-17).
 | 3 – UI | ❌ Removed | Frontend xóa — project thuần backend/API |
 | 3.5 – Bible Scan | ✅ Done | Scanned Tier1 (Gospels + Pauline), reviewed bằng Gemini |
 | 4 – Content Gen | ✅ Done | 18 chương published (A1-A8, B1-B10) |
-| **5 – Expand Book** | 🔄 In progress | 53 trang → mục tiêu 340 trang (39 chương, 5 phần) |
+| **5 – Expand Book** | ✅ Done | 362 trang A5 (39 chương, 5 phần) — `kinhthanh-book.pdf` |
 | 6 – TTS | ⏳ Pending | Audio cho practiceScript |
 
 ---
@@ -38,13 +38,12 @@ Project thuần backend (frontend đã xóa 2026-04-17).
 | 5 | `seed/export-pdf.ts` — rewrite export không cần web server | ✅ Done (code written) |
 | 6 | Chạy toàn bộ + verify output | ⏳ Chưa chạy |
 
-**Bước tiếp theo:** Chạy seed scripts để generate nội dung:
-```bash
-npx tsx seed/expand-chapters.ts          # ~$4-6, ~30 phút
-npx tsx seed/generate-new-chapters.ts   # ~$4-6, ~30 phút
-npx tsx seed/add-book-structure.ts       # ~$0.50, ~5 phút
-npx tsx seed/export-pdf.ts               # output: ./book.pdf
-```
+**Hoàn thành 2026-04-17.** Output: `kinhthanh-book.pdf` (362 trang A5, 1.67 MB)
+
+Ghi chú kỹ thuật:
+- JSON mode GPT-4o truncate `textVi` field → fix bằng `sanitizeJson()` trong `retry-failed-chapters.ts`
+- `expand-body.ts`: plain text (không JSON) để force model viết đủ dài
+- PDF format: A5 (148×210mm) thay A4 — kích thước sách thực tế
 
 ---
 

@@ -207,8 +207,8 @@ async function buildHTML(): Promise<string> {
   body {
     font-family: 'Georgia', 'Times New Roman', serif;
     color: #1a1a1a;
-    font-size: 11pt;
-    line-height: 1.8;
+    font-size: 10.5pt;
+    line-height: 1.9;
   }
 
   .page-break { page-break-before: always; }
@@ -331,8 +331,8 @@ async function buildHTML(): Promise<string> {
 
   @media print {
     @page {
-      size: A4;
-      margin: 22mm 24mm 26mm 24mm;
+      size: 148mm 210mm;
+      margin: 18mm 20mm 22mm 20mm;
     }
   }
 </style>
@@ -418,16 +418,17 @@ async function main() {
   console.log(`Exporting PDF → ${outputPath}`);
   await page.pdf({
     path: outputPath,
-    format: "A4",
+    width: "148mm",
+    height: "210mm",
     printBackground: true,
     displayHeaderFooter: true,
-    headerTemplate: `<div style="font-size:8px; color:#bbb; font-family:Georgia,serif; width:100%; text-align:center; padding-top:6px;">
+    headerTemplate: `<div style="font-size:7px; color:#bbb; font-family:Georgia,serif; width:100%; text-align:center; padding-top:4px;">
       Kitô giáo Tỉnh thức — Thế giới · Bản ngã · Từ bi
     </div>`,
-    footerTemplate: `<div style="font-size:8px; color:#bbb; font-family:Georgia,serif; width:100%; text-align:center; padding-bottom:6px;">
+    footerTemplate: `<div style="font-size:7px; color:#bbb; font-family:Georgia,serif; width:100%; text-align:center; padding-bottom:4px;">
       <span class="pageNumber"></span>
     </div>`,
-    margin: { top: "22mm", right: "24mm", bottom: "26mm", left: "24mm" },
+    margin: { top: "18mm", right: "20mm", bottom: "22mm", left: "20mm" },
   });
 
   await browser.close();
